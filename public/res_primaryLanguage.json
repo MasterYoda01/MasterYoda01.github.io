@@ -1,0 +1,149 @@
+{
+  "basic_info": {
+    "description_header": "Hey there",
+    "description": "Hi, I'm Joseph Ye! I'm a software engineer passionate about AI, machine learning, and full-stack development. I've worked on projects spanning cognitive state analysis, large-scale data migration, and mobile app development.",
+    "section_name": {
+      "about": "About Me",
+      "projects": "Projects",
+      "skills": "Skills",
+      "experience": "Experience"
+    }
+  },
+  "projects": [
+    {
+      "title": "Tally: An Automatic Receipt Delivery Platform",
+      "startDate": "Dec 2024 – Present",
+      "description": "Managing receipts shouldn’t be a hassle. Our platform streamlines the process of capturing, storing, and organizing receipts automatically. With a simple scan, receipts are instantly digitized and securely stored in a centralized database. Powered by advanced OCR technology, the system extracts key details like merchant name, date, and total amount, ensuring seamless integration with accounting tools and personal finance apps. Whether you're a business owner tracking expenses or an individual looking to declutter, our platform offers an effortless way to manage receipts without the paperwork.\n\nBeyond just digitization, our platform transforms how users interact with their receipts. With AI-driven categorization and smart search functionality, finding past transactions is as easy as typing a keyword. Users can set custom alerts for warranties, returns, or reimbursements, ensuring no important details get lost. Plus, with cloud storage and multi-device access, your receipts are always available when you need them. Say goodbye to paper clutter and hello to a smarter way to track expenses—automatically and effortlessly.",
+      "images": ["images/portfolio/receipt/p1.jpg"],
+      "url": "",
+      "technologies": [
+        {
+          "class": "devicon-react-original",
+          "name": "React Native"
+        },
+        {
+          "class": "devicon-nodejs-plain",
+          "name": "Node.js"
+        },
+        {
+          "class": "devicon-mongodb-plain",
+          "name": "MongoDB"
+        }
+      ]
+    },
+    {
+      "title": "TuneTrainer App: Study Notes through Songs",
+      "startDate": "Oct 2023",
+      "description": "Memorizing notes just got easier and more fun with TuneTrainer. This app transforms your study material into catchy tunes by matching your notes to the melodies of your favorite songs. Whether you're prepping for an exam, learning a new language, or just trying to retain key information, TuneTrainer turns your notes into an engaging musical experience that helps you remember effortlessly.\n\nUsing AI-powered audio processing and natural language understanding, TuneTrainer automatically maps text to rhythm and melody, creating personalized study songs that reinforce retention through music. With a customizable playlist, voice synthesis, and real-time lyric adjustments, users can fine-tune their learning experience. By combining the science of music with memory enhancement techniques, TuneTrainer helps you turn studying into a fun and effective habit.",
+      "images": ["images/portfolio/tunetrainer/p1.jpg"],
+      "url": "https://github.com/MasterYoda01/TuneTrainer.git",
+      "technologies": [
+        {
+          "class": "devicon-vuejs-plain",
+          "name": "Vue.js"
+        },
+        {
+          "class": "devicon-nodejs-plain",
+          "name": "Node.js"
+        },
+        {
+          "class": "devicon-mongodb-plain",
+          "name": "MongoDB"
+        },
+        {
+          "class": "",
+          "name": "GPT-4"
+        }
+      ]
+    },
+    {
+      "title": "LipidGPT: Lipid Nanoparticle Automatic Data Migration",
+      "startDate": "May 2024 – Aug 2024",
+      "description": "Designed and implemented a highly scalable backend pipeline for Eli Lilly & Company to automate the migration of large-scale lipid nanoparticle (LNP) datasets, leveraging LLaMA 3.0 for intelligent data transformation. The system reduced manual intervention by 90% by automatically mapping legacy data structures to modern schemas with high fidelity. Optimized SQL queries and recursive data processing techniques significantly improved efficiency, enabling seamless handling of complex relationships within vast datasets. Integrated robust error-handling mechanisms and validation processes to ensure data integrity and accuracy throughout migration. This solution streamlined the transition of thousands of LNP data points, accelerating research workflows and enhancing accessibility for downstream analysis.",
+      "images": ["images/portfolio/lnp/p1.jpg"],
+      "url": "",
+      "technologies": [
+        {
+          "class": "devicon-python-plain",
+          "name": "Python"
+        },
+        {
+          "class": "devicon-mysql-plain",
+          "name": "SQL"
+        },
+        {
+          "class": "devicon-openai-plain",
+          "name": "LLaMA 3.0"
+        }
+      ]
+    },
+    {
+      "title": "Automated Polysomnography Data Processing",
+      "startDate": "May 2023 – Aug 2023",
+      "description": "Engineered a robust Python pipeline to process and analyze over 30,000 hours of polysomnography (PSG) data, optimizing sleep stage classification with machine learning techniques. Leveraged the YASA sleep analysis library to extract and preprocess EEG, EOG, and EMG signals, implementing feature engineering strategies to enhance model performance. Achieved an impressive 87% classification accuracy for sleep stage prediction by fine-tuning hyperparameters and applying statistical validation methods, including Bland-Altman analysis and t-tests, to ensure reliability.\n\nOptimized data handling for large-scale PSG datasets, reducing processing time while maintaining high fidelity in sleep state transitions. The solution contributed to advancements in sleep research, enabling more precise and scalable analysis of sleep patterns for clinical and research applications.",
+      "images": ["images/portfolio/sleep/p1.jpg"],
+      "url": "",
+      "technologies": [
+        {
+          "class": "devicon-python-plain",
+          "name": "Python"
+        },
+        {
+          "class": "devicon-numpy-plain",
+          "name": "NumPy"
+        },
+        {
+          "class": "devicon-pandas-plain",
+          "name": "Pandas"
+        }
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "company": "Tally",
+      "title": "Full Stack Developer",
+      "years": "Dec 2021 – Present",
+      "mainTech": ["React Native", "Node.js", "Express", "MongoDB", "Expo"],
+      "technologies": ["React Native", "Node.js", "Express", "MongoDB", "Expo"],
+      "icon": "fas fa-laptop-code"
+    },
+    {
+      "company": "MIT Media Lab",
+      "title": "Software Engineer Intern",
+      "years": "Jan 2025 – Present",
+      "mainTech": ["Python", "TensorFlow", "PyTorch", "EEG Signal Processing"],
+      "technologies": [
+        "Python",
+        "TensorFlow",
+        "PyTorch",
+        "EEG Signal Processing"
+      ],
+      "icon": "fas fa-brain"
+    },
+    {
+      "company": "Eli Lilly and Company",
+      "title": "Software Engineer Intern",
+      "years": "May 2024 – Aug 2024",
+      "mainTech": ["Python", "SQL", "LLaMA 3.0"],
+      "technologies": ["Python", "SQL", "LLaMA 3.0"],
+      "icon": "fas fa-database"
+    },
+    {
+      "company": "Eli Lilly and Company",
+      "title": "Software Engineer Intern",
+      "years": "May 2023 – Aug 2023",
+      "mainTech": ["Python", "YASA", "NumPy", "Pandas"],
+      "technologies": ["Python", "YASA", "NumPy", "Pandas"],
+      "icon": "fas fa-chart-line"
+    },
+    {
+      "company": "MIT Koch Institute",
+      "title": "Undergraduate Researcher",
+      "years": "May 2022 – Aug 2022",
+      "mainTech": ["Python", "Microcontrollers", "Heart Rate Analysis"],
+      "technologies": ["Python", "Microcontrollers", "Heart Rate Analysis"],
+      "icon": "fas fa-tools"
+    }
+  ]
+}
