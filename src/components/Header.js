@@ -72,7 +72,7 @@ class Header extends Component {
 
             <div
               className="resume-button-container"
-              style={{ marginTop: "20px" }}
+              style={{ marginTop: "80px" }}
             >
               <a
                 href="resume_swe.pdf"
