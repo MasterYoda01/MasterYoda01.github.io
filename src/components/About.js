@@ -1,81 +1,56 @@
 import React, { Component } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import the AOS styles
 
 class About extends Component {
   render() {
+    let firstProfilePic, secondProfilePic, sectionName, about;
+
     if (this.props.sharedBasicInfo) {
-      var profilepic = "images/" + this.props.sharedBasicInfo.image;
+      firstProfilePic = "images/" + this.props.sharedBasicInfo.image;
+      secondProfilePic = "images/" + this.props.sharedBasicInfo.image2; // example
     }
     if (this.props.resumeBasicInfo) {
-      var sectionName = this.props.resumeBasicInfo.section_name.about;
-      var hello = this.props.resumeBasicInfo.description_header;
-      var about = this.props.resumeBasicInfo.description;
+      sectionName = this.props.resumeBasicInfo.section_name.about;
+      about = this.props.resumeBasicInfo.description;
     }
 
     return (
       <section id="about">
-        <div className="col-md-12">
-          <h1 style={{ color: "black" }}>
+        <div className="container">
+          <h1 className="section-title" style={{ color: "black" }}>
             <span>{sectionName}</span>
           </h1>
-          <div className="row center mx-auto mb-5">
-            <div className="col-md-4 mb-5 center">
-              <div className="polaroid">
-                <span style={{ cursor: "auto" }}>
+
+          {/* Main flex container */}
+          <div className="about-content">
+            {/* Wrap both pictures in a sub-container */}
+            <div className="about-pictures">
+              <div className="about-profile-container">
+                <div className="about-profile-frame">
                   <img
-                    height="250px"
-                    src={profilepic}
-                    alt="Avatar placeholder"
+                    className="about-profile-pic"
+                    src={firstProfilePic}
+                    alt="First profile"
                   />
-                </span>
+                </div>
+              </div>
+
+              <div className="about-profile-container">
+                <div className="about-profile-frame">
+                  <img
+                    className="about-profile-pic"
+                    src={secondProfilePic}
+                    alt="Second profile"
+                  />
+                </div>
               </div>
             </div>
 
-            <div className="col-md-8 center">
-              <div className="col-md-10">
-                <div className="card">
-                  <div className="card-header">
-                    <span
-                      className="iconify"
-                      data-icon="emojione:red-circle"
-                      data-inline="false"
-                    ></span>{" "}
-                    &nbsp;{" "}
-                    <span
-                      className="iconify"
-                      data-icon="twemoji:yellow-circle"
-                      data-inline="false"
-                    ></span>{" "}
-                    &nbsp;{" "}
-                    <span
-                      className="iconify"
-                      data-icon="twemoji:green-circle"
-                      data-inline="false"
-                    ></span>
-                  </div>
-                  <div
-                    className="card-body font-trebuchet text-justify ml-3 mr-3"
-                    style={{
-                      height: "auto",
-                      fontSize: "132%",
-                      lineHeight: "200%",
-                    }}
-                  >
-                    <br />
-                    <span className="wave">{hello} :) </span>
-                    <br />
-                    <br />
-                    {about}
-                    <br />
-                    <br />
-                    <a
-                      href="/resume_swe.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <button className="resume-button">Download Resume</button>
-                    </a>
-                  </div>
-                </div>
+            {/* About description box */}
+            <div className="about-description-box">
+              <div className="about-description-content">
+                <p className="about-description">{about}</p>
               </div>
             </div>
           </div>

@@ -1,7 +1,6 @@
 {
   "basic_info": {
-    "description_header": "Hey there",
-    "description": "Hi, I'm Joseph Ye! I'm a software engineer passionate about AI, machine learning, and full-stack development. I've worked on projects spanning cognitive state analysis, large-scale data migration, and mobile app development.",
+    "description": "I’m graduating from MIT with a B.S. in Computer Science in 2025 and a Masters of Engineering in AI in 2026. I'm a first generation college student from Tulsa, Oklahoma, and my journey began in my family’s Chinese buffet restaurant. My parents immigrated to the U.S. and, from the age of 10, I took on roles as a cashier, waiter, and greeter. Managing payments, handling customer service, and keeping operations running smoothly taught me early responsibility, financial awareness, and problem-solving under pressure. These experiences sharpened my ability to adapt, think critically, and communicate effectively. As I grew older, I realized that the same problem-solving mindset I used in the restaurant could be applied to something I was deeply passionate about—technology. I was drawn to software engineering because it gave me the power to build solutions, automate tasks, and break down complex problems into structured, logical steps. From writing my first lines of code to working on machine learning applications, I’ve always been fascinated by how technology can create meaningful impact. Now, I’m focused on using my skills to develop software that is not only functional but also intuitive and accessible, just like the bridges I’ve had to build throughout my life.",
     "section_name": {
       "about": "About Me",
       "projects": "Projects",

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Typical from "react-typical";
-import Switch from "react-switch";
 
 class Header extends Component {
   titles = [];
@@ -24,69 +23,89 @@ class Header extends Component {
     body.setAttribute(dataThemeAttribute, newTheme);
   }
 
+  // Smooth scrolling function
+  smoothScroll(e, targetId) {
+    e.preventDefault();
+    document.querySelector(targetId).scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+
   render() {
     if (this.props.sharedData) {
       var name = this.props.sharedData.name;
-      this.titles = this.props.sharedData.titles.map(x => [ x.toUpperCase(), 1500 ] ).flat();
+      this.titles = this.props.sharedData.titles
+        .map((x) => [x.toUpperCase(), 1500])
+        .flat();
     }
 
-    const HeaderTitleTypeAnimation = React.memo( () => {
-      return <Typical className="title-styles" steps={this.titles} loop={50} />
-    }, (props, prevProp) => true);
+    const HeaderTitleTypeAnimation = React.memo(
+      () => {
+        return (
+          <Typical className="title-styles" steps={this.titles} loop={50} />
+        );
+      },
+      (props, prevProp) => true
+    );
 
     return (
-      <header id="home" style={{ height: window.innerHeight - 140, display: 'block' }}>
-        <div className="row aligner" style={{height: '100%'}}>
-          <div className="col-md-12">
-            <div>
-              <span className="iconify header-icon" data-icon="la:laptop-code" data-inline="false"></span>
-              <br/>
-              <h1 className="mb-0">
-                <Typical steps={[name]} wrapper="p" />
-              </h1>
-              <div className="title-container">
-                <HeaderTitleTypeAnimation />
-              </div>
-              <Switch
-                checked={this.state.checked}
-                onChange={this.onThemeSwitchChange}
-                offColor="#baaa80"
-                onColor="#353535"
-                className="react-switch mx-auto"
-                width={90}
-                height={40}
-                uncheckedIcon={
-                  <span
-                    className="iconify"
-                    data-icon="twemoji:owl"
-                    data-inline="false"
-                    style={{
-                      display: "block",
-                      height: "100%",
-                      fontSize: 25,
-                      textAlign: "end",
-                      marginLeft: "20px",
-                      color: "#353239",
-                    }}
-                  ></span>
-                }
-                checkedIcon={
-                  <span
-                    className="iconify"
-                    data-icon="noto-v1:sun-with-face"
-                    data-inline="false"
-                    style={{
-                      display: "block",
-                      height: "100%",
-                      fontSize: 25,
-                      textAlign: "end",
-                      marginLeft: "10px",
-                      color: "#353239",
-                    }}
-                  ></span>
-                }
-                id="icon-switch"
+      <header id="home">
+        <div className="header-content">
+          {/* Left Section: Profile Picture */}
+          <div className="profile-container">
+            <div className="profile-frame">
+              <img
+                className="profile-pic"
+                src="../../images/myProfile.jpg"
+                alt="Profile"
               />
+            </div>
+          </div>
+
+          {/* Right Section: Name, Titles, and Social Links */}
+          <div className="header-text">
+            <h1 className="header-name">{name}</h1>
+            <div className="title-container">
+              <HeaderTitleTypeAnimation />
+            </div>
+
+            <div
+              className="resume-button-container"
+              style={{ marginTop: "20px" }}
+            >
+              <a
+                href="resume_swe.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="resume-button"
+              >
+                View Resume
+              </a>
+            </div>
+            {/* Social Media Icons */}
+            <div className="social-icons">
+              <a
+                href="https://www.linkedin.com/in/joseph-ye/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-linkedin"></i>
+              </a>
+              <a
+                href="https://github.com/MasterYoda01"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-github"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/josephye/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-instagram"></i>
+              </a>
             </div>
           </div>
         </div>

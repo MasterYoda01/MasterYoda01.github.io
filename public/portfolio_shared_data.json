@@ -2,16 +2,16 @@
   "basic_info": {
     "name": "Joseph Ye",
     "titles": [
-      "Front-end Developer",
-      "Back-end Developer",
+      "Machine Learning Engineer",
+      "Full-Stack Developer",
       "Software Engineer",
       "Mobile App Developer"
     ],
     "social": [
       {
-        "name": "github",
-        "url": "https://github.com",
-        "class": "fab fa-github"
+        "name": "linkedin",
+        "url": "https://www.linkedin.com/in/joseph-ye/",
+        "class": "fab fa-linkedin"
       },
       {
         "name": "instagram",
@@ -19,7 +19,8 @@
         "class": "fab fa-instagram"
       }
     ],
-    "image": "myProfile.jpg"
+    "image": "restaurant.jpg",
+    "image2": "restaurant2.jpg"
   },
   "skills": {
     "icons": [
@@ -57,11 +58,6 @@
         "name": "Vue.js",
         "class": "devicon-vuejs-plain",
         "level": "75"
-      },
-      {
-        "name": "Expo",
-        "class": "devicon-react-original",
-        "level": "80"
       },
       {
         "name": "Node.js",
