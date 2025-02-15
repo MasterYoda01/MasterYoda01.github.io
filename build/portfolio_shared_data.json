@@ -1,0 +1,99 @@
+{
+  "basic_info": {
+    "name": "Joseph Ye",
+    "titles": [
+      "Machine Learning Engineer",
+      "Full-Stack Developer",
+      "Software Engineer",
+      "Mobile App Developer"
+    ],
+    "social": [
+      {
+        "name": "linkedin",
+        "url": "https://www.linkedin.com/in/joseph-ye/",
+        "class": "fab fa-linkedin"
+      },
+      {
+        "name": "instagram",
+        "url": "https://www.instagram.com/josephye/",
+        "class": "fab fa-instagram"
+      }
+    ],
+    "image": "restaurant.jpg",
+    "image2": "restaurant2.jpg"
+  },
+  "skills": {
+    "icons": [
+      {
+        "name": "Python",
+        "class": "devicon-python-plain",
+        "level": "95"
+      },
+      {
+        "name": "TypeScript",
+        "class": "devicon-typescript-plain",
+        "level": "90"
+      },
+      {
+        "name": "JavaScript",
+        "class": "devicon-javascript-plain",
+        "level": "85"
+      },
+      {
+        "name": "C++",
+        "class": "devicon-cplusplus-plain",
+        "level": "80"
+      },
+      {
+        "name": "HTML/CSS",
+        "class": "devicon-html5-plain",
+        "level": "95"
+      },
+      {
+        "name": "React",
+        "class": "devicon-react-original",
+        "level": "85"
+      },
+      {
+        "name": "Vue.js",
+        "class": "devicon-vuejs-plain",
+        "level": "75"
+      },
+      {
+        "name": "Node.js",
+        "class": "devicon-nodejs-plain",
+        "level": "85"
+      },
+      {
+        "name": "Express",
+        "class": "devicon-express-original",
+        "level": "80"
+      },
+      {
+        "name": "MongoDB",
+        "class": "devicon-mongodb-plain",
+        "level": "85"
+      },
+      {
+        "name": "SQL",
+        "class": "devicon-mysql-plain",
+        "level": "80"
+      },
+      {
+        "name": "Pandas",
+        "class": "devicon-pandas-plain",
+        "level": "85"
+      },
+      {
+        "name": "NumPy",
+        "class": "devicon-numpy-plain",
+        "level": "85"
+      },
+      {
+        "name": "TensorFlow",
+        "class": "devicon-tensorflow-original",
+        "level": "75"
+      }
+    ]
+  }
+}
