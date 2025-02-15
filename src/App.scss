@@ -374,6 +374,15 @@ header {
   font-weight: lighter !important;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
+.vertical-timeline-element-title {
+  font-size: 18px; /* or 16px, or any smaller size you want */
+  font-weight: bold; /*
+   keep it bold if you like */
+}
+
+.vertical-timeline-element-subtitle {
+  font-size: 1.5rem; /* or 14px, etc. */
+}
 
 .vertical-timeline-element-date {
   padding: 0 !important;
