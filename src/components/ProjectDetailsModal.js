@@ -4,37 +4,39 @@ import AwesomeSlider from "react-awesome-slider";
 import AwesomeSliderStyles from "../scss/light-slider.scss";
 import AwesomeSliderStyles2 from "../scss/dark-slider.scss";
 import "react-awesome-slider/dist/custom-animations/scale-out-animation.css";
+
 class ProjectDetailsModal extends Component {
   render() {
+    let tech, img, title, description, url;
     if (this.props.data) {
-      const technologies = this.props.data.technologies;
-      const images = this.props.data.images;
-      var title = this.props.data.title;
-      var description = this.props.data.description;
-      var url = this.props.data.url;
-      if (this.props.data.technologies) {
-        var tech = technologies.map((icons, i) => {
+      const { technologies, images } = this.props.data;
+      title = this.props.data.title;
+      description = this.props.data.description;
+      url = this.props.data.url;
+
+      if (technologies) {
+        tech = technologies.map((icon, i) => {
           return (
-            <li className="list-inline-item mx-3" key={i}>
-              <span>
-                <div className="text-center">
-                  <i className={icons.class} style={{ fontSize: "300%" }}>
-                    <p className="text-center" style={{ fontSize: "30%" }}>
-                      {icons.name}
-                    </p>
-                  </i>
-                </div>
-              </span>
+            <li className="list-inline-item tech-item" key={i}>
+              <div className="text-center">
+                <i className={icon.class} style={{ fontSize: "300%" }}>
+                  <p className="tech-name" style={{ fontSize: "30%" }}>
+                    {icon.name}
+                  </p>
+                </i>
+              </div>
             </li>
           );
         });
-        if (this.props.data.images) {
-          var img = images.map((elem, i) => {
-            return <div key={i} data-src={elem} />;
-          });
-        }
+      }
+
+      if (images) {
+        img = images.map((elem, i) => {
+          return <div key={i} data-src={elem} />;
+        });
       }
     }
+
     return (
       <Modal
         {...this.props}
@@ -46,22 +48,22 @@ class ProjectDetailsModal extends Component {
         <span onClick={this.props.onHide} className="modal-close">
           <i className="fas fa-times fa-3x close-icon"></i>
         </span>
-        <div className="col-md-12">
-          <div className="col-md-10 mx-auto" style={{ paddingBottom: "50px" }}>
+        <div className="modal-body-content">
+          <div className="slider-container">
             <div className="slider-tab">
               <span
                 className="iconify slider-iconfiy"
                 data-icon="emojione:red-circle"
                 data-inline="false"
                 style={{ marginLeft: "5px" }}
-              ></span>{" "}
-              &nbsp;{" "}
+              ></span>
+              &nbsp;
               <span
                 className="iconify slider-iconfiy"
                 data-icon="twemoji:yellow-circle"
                 data-inline="false"
-              ></span>{" "}
-              &nbsp;{" "}
+              ></span>
+              &nbsp;
               <span
                 className="iconify slider-iconfiy"
                 data-icon="twemoji:green-circle"
@@ -76,8 +78,8 @@ class ProjectDetailsModal extends Component {
               {img}
             </AwesomeSlider>
           </div>
-          <div className="col-md-10 mx-auto">
-            <h3 style={{ padding: "5px 5px 0 5px" }}>
+          <div className="content-container">
+            <h3 className="project-title">
               {title}
               {url ? (
                 <a
@@ -86,31 +88,17 @@ class ProjectDetailsModal extends Component {
                   rel="noopener noreferrer"
                   className="link-href"
                 >
-                  <i
-                    className="fas fa-external-link-alt"
-                    style={{ marginLeft: "10px" }}
-                  ></i>
+                  <i className="fas fa-external-link-alt link-icon"></i>
                 </a>
               ) : (
-                <div
-                  style={{
-                    backgroundColor: "#f8d7da",
-                    color: "#721c24",
-                    padding: "5px 10px",
-                    borderRadius: "5px",
-                    fontSize: "14px",
-                    fontWeight: "bold",
-                    display: "inline-block",
-                    // marginLeft: "10px",
-                  }}
-                >
+                <div className="no-link">
                   No link to Github available – private & confidential
                 </div>
               )}
             </h3>
             <p className="modal-description">{description}</p>
-            <div className="col-md-12 text-center">
-              <ul className="list-inline mx-auto">{tech}</ul>
+            <div className="tech-list-container">
+              <ul className="list-inline mx-auto tech-list">{tech}</ul>
             </div>
           </div>
         </div>

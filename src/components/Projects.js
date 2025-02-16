@@ -11,39 +11,33 @@ class Projects extends Component {
   }
 
   render() {
-    let detailsModalShow = (data) => {
+    const detailsModalShow = (data) => {
       this.setState({ detailsModalShow: true, deps: data });
     };
 
-    let detailsModalClose = () => this.setState({ detailsModalShow: false });
+    const detailsModalClose = () => this.setState({ detailsModalShow: false });
+
+    let sectionName, projects;
     if (this.props.resumeProjects && this.props.resumeBasicInfo) {
-      var sectionName = this.props.resumeBasicInfo.section_name.projects;
-      var projects = this.props.resumeProjects.map(function (projects) {
+      sectionName = this.props.resumeBasicInfo.section_name.projects;
+      projects = this.props.resumeProjects.map((project) => {
         return (
           <div
-            className="col-sm-12 col-md-6 col-lg-4"
-            key={projects.title}
+            className="project-item"
+            key={project.title}
+            onClick={() => detailsModalShow(project)}
             style={{ cursor: "pointer" }}
           >
             <span className="portfolio-item d-block">
-              <div className="foto" onClick={() => detailsModalShow(projects)}>
-                <div>
-                  <img
-                    src={projects.images[0]}
-                    alt="projectImages"
-                    height="230"
-                    style={{
-                      marginBottom: 0,
-                      paddingBottom: 0,
-                      position: "relative",
-                    }}
-                  />
-                  <span className="project-date">{projects.startDate}</span>
-                  <br />
-                  <p className="project-title-settings mt-3">
-                    {projects.title}
-                  </p>
-                </div>
+              <div className="foto">
+                <img
+                  src={project.images[0]}
+                  alt="project screenshot"
+                  className="project-img"
+                />
+                <span className="project-date">{project.startDate}</span>
+                <br />
+                <p className="project-title-settings mt-3">{project.title}</p>
               </div>
             </span>
           </div>
@@ -58,7 +52,7 @@ class Projects extends Component {
             <span>{sectionName}</span>
           </h1>
           <div className="col-md-12 mx-auto">
-            <div className="row mx-auto">{projects}</div>
+            <div className="projects-grid">{projects}</div>
           </div>
           <ProjectDetailsModal
             show={this.state.detailsModalShow}

@@ -67,11 +67,12 @@ header {
 .header-content {
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* Align everything more to the right */
+  justify-content: flex-end;
+  flex-wrap: wrap;
   width: 90%;
-  margin-left: auto; /* Push everything towards the right */
-  padding: 120px 100px; /* Increased padding to shift further right */
-  gap: 80px; /* Adds space between the profile picture and text */
+  margin-left: auto;
+  padding: 120px 100px;
+  gap: 80px;
 }
 
 /* HEADER TEXT SECTION */
@@ -105,11 +106,52 @@ header {
   color: #007bff;
 }
 
-.switch-icon {
-  font-size: 20px;
-  color: #fff;
-  text-align: center;
-  width: 100%;
+/* RESPONSIVE STYLES */
+@media (max-width: 768px) {
+  header {
+    padding: 20px;
+  }
+
+  .header-content {
+    flex-direction: column; /* Stack the items vertically */
+    align-items: center;
+    padding: 50px 20px;
+    gap: 30px;
+  }
+
+  .header-text {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .header-name {
+    font-size: 28px;
+  }
+
+  .profile-container {
+    /* If you want the profile image on top on mobile */
+    order: -1;
+  }
+
+  .social-icons a {
+    margin: 0 10px;
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-name {
+    font-size: 24px;
+  }
+
+  .header-content {
+    padding: 30px 10px;
+  }
+
+  .social-icons a {
+    font-size: 20px;
+    margin: 0 8px;
+  }
 }
 
 .project-date {
@@ -219,6 +261,57 @@ header {
   line-height: 1.6; /* You can lower this if you want the box to appear less tall */
   font-family: "Lora", serif;
   color: #333;
+}
+
+/* RESPONSIVE STYLES */
+@media screen and (max-width: 768px) {
+  .about-content {
+    flex-direction: column; /* Stack images and description vertically */
+    gap: 30px;
+    padding: 0 20px;
+  }
+
+  /* Adjust the pictures container to center content and allow wrapping */
+  .about-pictures {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  /* Resize profile images */
+  .about-profile-container {
+    width: 250px;
+    height: 250px;
+  }
+  .about-profile-frame {
+    width: 250px;
+    height: 250px;
+  }
+
+  /* Adjust the description box */
+  .about-description-box {
+    right: 0; /* Remove the right offset on mobile */
+    max-width: 90%;
+    padding: 20px;
+    margin: 0 auto; /* Center the box */
+  }
+
+  .about-description-content {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about-profile-container,
+  .about-profile-frame {
+    width: 200px;
+    height: 200px;
+  }
+
+  .about-description-content {
+    font-size: 14px;
+  }
 }
 
 /* Resume Button */
@@ -445,57 +538,22 @@ header {
   }
 }
 
+/* Modal Content Background */
 .modal-inside .modal-content {
   background: white;
+  padding: 20px;
+  border-radius: 8px;
 }
 
-.bars {
-  width: 95%;
-  float: left;
-  padding: 0;
-  text-align: left;
-}
-
-.bars .skills {
-  margin-top: 36px;
-  list-style: none;
-}
-
-.bars li {
-  position: relative;
-  margin-bottom: 60px;
-  background: #ccc;
-  height: 42px;
-  border-radius: 3px;
-}
-
-.bars li em {
-  font: 15px "opensans-bold", sans-serif;
-  color: #313131;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: normal;
-  position: relative;
-  top: -36px;
-}
-
-.bar-expand {
-  position: absolute;
-  left: 0;
-  top: 0;
-  margin: 0;
-  padding-right: 24px;
-  background: #313131;
-  display: inline-block;
-  height: 42px;
-  line-height: 42px;
-  border-radius: 3px 0 0 3px;
-}
-
+/* Close Icon Styling */
 .modal-close {
   text-align: right;
-  padding: 10px 15px 10px 15px;
+  padding: 10px 15px;
   cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 10;
 }
 
 .close-icon {
@@ -503,54 +561,193 @@ header {
   font-weight: lighter !important;
 }
 
+/* Main Container for Modal Body */
+.modal-body-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+/* Slider Container */
+.slider-container {
+  flex: 1;
+  margin-right: 20px;
+}
+
+/* Content Container */
+.content-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Project Title & Link */
+.project-title {
+  padding: 5px;
+  margin-bottom: 10px;
+  font-size: 1.75rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.link-href {
+  margin-left: 10px;
+}
+
+.link-icon {
+  margin-left: 10px;
+}
+
+/* Modal Description */
 .modal-description {
   text-align: justify;
-  padding: 5px 5px 0 5px;
+  padding: 5px;
   margin-bottom: 20px;
-  font-size: 12px;
+  font-size: 1rem;
 }
 
-.awssld__next {
-  outline: none !important;
+/* Technologies List */
+.tech-list {
+  padding: 0;
+  margin: 0;
 }
 
-.awssld__prev {
-  outline: none !important;
+.tech-item {
+  margin: 0 15px;
 }
 
-.loader-bar-color {
-  color: black !important;
+/* --- Responsive Adjustments for Mobile --- */
+@media (max-width: 768px) {
+  .modal-body-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .slider-container {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .content-container {
+    width: 100%;
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+    justify-content: center;
+  }
+
+  .modal-description {
+    font-size: 0.9rem;
+  }
+
+  .tech-item {
+    margin: 0 10px;
+  }
+
+  /* Adjust slider image height on mobile */
+  .slider-image {
+    height: 250px; /* Adjust based on your desired mobile image size */
+  }
 }
 
+@media (max-width: 480px) {
+  .project-title {
+    font-size: 1.3rem;
+  }
+
+  .modal-description {
+    font-size: 0.85rem;
+  }
+
+  .close-icon {
+    font-size: 2rem;
+  }
+
+  .tech-item {
+    margin: 0 8px;
+  }
+}
+
+/* --- Desktop-only Adjustments (min-width: 769px) --- */
+@media (min-width: 769px) {
+  /* Increase modal content padding and overall modal width */
+
+  .custom-modal-width {
+    max-width: 1200px; /* Increase as you wish */
+    width: 90%; /* or a specific width like 1000px */
+    margin: auto; /* center the modal horizontally */
+  }
+
+  /* Enlarge slider for desktop */
+  .slider-image {
+    height: 500px;
+  }
+
+  /* Increase project title size */
+  .project-title {
+    font-size: 2.5rem;
+  }
+
+  /* Increase modal description text size */
+  .modal-description {
+    font-size: 1.5rem;
+  }
+
+  /* Increase technology icon sizes and spacing */
+  .tech-item i {
+    font-size: 350%;
+  }
+
+  .tech-item {
+    margin: 0 20px;
+  }
+}
 #portfolio {
   background: #efdabd;
   padding-bottom: 5%;
 }
 
-/* Grid Layout for 2x2 Projects */
-#portfolio .row {
+/* Portfolio Section Background */
+#portfolio {
+  background: #efdabd;
+  padding-bottom: 5%;
+}
+
+/* Grid Layout for Projects */
+.projects-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  gap: 20px; /* Adds spacing between grid items */
+  grid-template-columns: repeat(2, 1fr); /* Two columns on larger screens */
+  gap: 15px; /* Reduced gap between grid items */
   justify-items: center;
   align-items: center;
 }
 
-/* Ensure all items are equal size */
-.portfolio-item {
+/* Individual Project Item with Border */
+.project-item {
   width: 100%;
-  max-width: 350px; /* Set a max-width to maintain uniformity */
-}
-
-.portfolio-item {
-  max-width: 100%;
+  max-width: 600px; /* Increased max-width for wider boxes */
   margin-bottom: 15px;
   text-align: center;
+  border: 2px solid #ccc; /* Border around each project */
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 10px; /* Padding around content */
+  background: #fff; /* Background color for contrast */
 }
 
+/* Project Image Styling */
+.project-img {
+  width: 100%;
+  height: auto; /* Responsive image */
+  object-fit: cover;
+}
+
+/* Optional Hover Effect for Captions */
 .portfolio .portfolio-item .portfolio-item-caption {
-  -webkit-transition: all ease 0.5s;
-  -moz-transition: all ease 0.5s;
   transition: all ease 0.5s;
   opacity: 0;
   background-color: rgba(51, 51, 51, 0.9);
@@ -567,12 +764,20 @@ header {
   font-size: 1.5rem;
 }
 
-@media (min-width: 576px) {
-  .portfolio .closeButtonResponsive {
-    display: block;
+/* RESPONSIVE STYLES */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr; /* Single column on mobile */
   }
-  .portfolio .portfolio-item {
-    margin-bottom: 30px;
+
+  .project-item {
+    max-width: 90%; /* Allow project items to take up most of the viewport width */
+  }
+}
+
+@media (max-width: 480px) {
+  .project-title-settings {
+    font-size: 16px;
   }
 }
 

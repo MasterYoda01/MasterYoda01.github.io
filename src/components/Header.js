@@ -16,10 +16,10 @@ class Header extends Component {
   }
 
   setTheme() {
-    var dataThemeAttribute = "data-theme";
-    var body = document.body;
-    var newTheme =
-      body.getAttribute(dataThemeAttribute) === "dark" ? "light" : "dark";
+    const dataThemeAttribute = "data-theme";
+    const body = document.body;
+    const currentTheme = body.getAttribute(dataThemeAttribute);
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
     body.setAttribute(dataThemeAttribute, newTheme);
   }
 
@@ -35,22 +35,21 @@ class Header extends Component {
   render() {
     if (this.props.sharedData) {
       var name = this.props.sharedData.name;
+      // Build the steps for the Typical animation
       this.titles = this.props.sharedData.titles
-        .map((x) => [x.toUpperCase(), 1500])
+        .map((title) => [title.toUpperCase(), 1500])
         .flat();
     }
 
+    // Memoized Title Animation
     const HeaderTitleTypeAnimation = React.memo(
-      () => {
-        return (
-          <Typical className="title-styles" steps={this.titles} loop={50} />
-        );
-      },
-      (props, prevProp) => true
+      () => <Typical className="title-styles" steps={this.titles} loop={50} />,
+      () => true
     );
 
     return (
       <header id="home">
+        {/* Wrap content in a flex container that can wrap on smaller screens */}
         <div className="header-content">
           {/* Left Section: Profile Picture */}
           <div className="profile-container">
@@ -63,7 +62,7 @@ class Header extends Component {
             </div>
           </div>
 
-          {/* Right Section: Name, Titles, and Social Links */}
+          {/* Right Section: Name, Titles, Resume Button, Social Links */}
           <div className="header-text">
             <h1 className="header-name">{name}</h1>
             <div className="title-container">
@@ -83,6 +82,7 @@ class Header extends Component {
                 View Resume
               </a>
             </div>
+
             {/* Social Media Icons */}
             <div className="social-icons">
               <a
